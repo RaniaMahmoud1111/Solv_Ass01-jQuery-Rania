@@ -1,6 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabs {
+            text-align: right;
+        }
 
+        .content-box {
+            display: none;
+        }
+
+        .ActiveCont {
+            background-color: lightgray;
+        }
+        .contStyle{
+            background-color: rgb(247, 234, 217);
+        }
+    </style>
+    <script src="./jquery-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="tabs">
+            <button class="tab-button ActiveCont" data-tab="1">TabOne</button>
+            <button class="tab-button ActiveCont" data-tab="2">TabTwo</button>
+            <button class="tab-button ActiveCont" data-tab="3">TabThree</button>
+            <button class="tab-button ActiveCont" data-tab="4">TabFour</button>
+
+
+        </div>
+
+        <div>
+            <div class="content-box contStyle" id="tab1">Tab1</div>
+            <div class="content-box contStyle" id="tab2">Tab2</div>
+            <div class="content-box contStyle" id="tab3">Tab3</div>
+            <div class="content-box  contStyle"  id="tab4">Tab4</div>
+
+        </div>
+    </nav>
+
+
+
+
+
+    <script>
+        $(".tab-button").click(function () {
+            //in active the rest of buttons
+            //mark the clicked button 
+            //show the conent of the clicked button 
+            // the clicked btn called this 
+
+            let tabNum = $(this).data("tab");
+
+            $(".content-box").hide();
+            //  $("#tab" + tabNum).show();
+
+            //****************************** bouns ***************************
+            $("#tab" + tabNum).fadeIn(1000);//take speed to control change of the opacity necessary if need animations
+            $("button").removeClass("ActiveCont");
+            $(this).addClass("ActiveCont");
+        });
+
+
+
+
+    </script>
+</body>
 
 </html>
