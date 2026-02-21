@@ -47,10 +47,20 @@
     </nav>
 
 
+    <br><br><br>
+    <hr>
+    <br></br><br>
 
+    <!--################################# Task 2 ##################################-->
+<h3>TO DO List !</h3>
+<input type="text" name="" id="" placeholder="enter a job name ">
+<button id="ad">Add</button>
+<ul id="list">
 
+</ul>
 
     <script>
+        //task 1
         $(".tab-button").click(function () {
             //in active the rest of buttons
             //mark the clicked button 
@@ -68,7 +78,21 @@
             $(this).addClass("ActiveCont");
         });
 
+//Task 2
+//when click on btn 
+//1. catch the entered value from input field
+//2. add new item in list with delete action beside it 
+//3. clear the input field 
+$("#ad").click(function(){
+let inpVal=$("input").val();
+let newItem ="<li>" + inpVal+"<button class='delete'>Delete</button> </li>" ;
+$("ul").append(newItem);
+$("input").val("");
+$(".delete").click(function(){
+  $(this).parent().remove();
+})
 
+})
 
 
     </script>
